@@ -1,0 +1,41 @@
+<!-- Register Form -->
+<h1>{{title}}</h1>
+<input type="text" #name placeholder="Enter your name" name="name">
+<br>
+<input type="email" #email placeholder="Enter your email" name="email">
+<br>
+<input type="text" #number placeholder="Enter your number" name="number">
+<br>
+<input type="text" #city placeholder="Enter your city" name="city">
+<br>
+<input type="password" #password placeholder="Enter your password" name="password"><br><br>
+<button (click)="registerUser(name.value,email.value,number.value,city.value,password.value)">Register</button>
+<button type="reset">Reset</button>
+<br>
+
+
+<!-- Login Form -->
+<h1>Login</h1>
+<input type="email" #loginEmail placeholder="Enter your email" name="email">
+<br>
+<input type="password" #loginPassword placeholder="Enter your password" name="password"><br><br>
+<button (click)="loginUser(loginEmail.value,loginPassword.value)">Login</button>
+
+<!-- Content after Login -->
+<div *ngIf="isLoggedIn">
+  <h1>Welcome, {{displayname}}</h1>
+  <!-- Display additional content for logged-in users -->
+</div>
+
+<h1>Your registered Data</h1>
+<br>
+<h3>
+  name:{{displayname}}
+<br>
+  email:{{displayemail}}
+<br>
+  city:{{displaycity}}
+<br>
+  phoneno:{{displaynumber}}
+</h3>
+<br>
